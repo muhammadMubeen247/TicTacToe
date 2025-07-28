@@ -78,3 +78,12 @@ export const logout = (req, res) => {
         res.status(500).json({message: 'Error Logging Out'});
     }
 }
+
+export const checkAuth = (req, res) => {
+    try {
+        return res.status(200).json(req.player);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({message: 'Error Checking Authentication'});
+    }
+}
